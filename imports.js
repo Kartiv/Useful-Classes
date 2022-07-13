@@ -19,7 +19,7 @@ class jsn{
      * @returns a random integer in [a,b)
      */
     static randint(a,b){
-        return a+Math.floor(Math.random()*(b-a));
+        return Math.ceil(a)+Math.floor(Math.random()*(b-a));
     }
     
     /**
@@ -165,6 +165,16 @@ class jsn{
     static sigmoid(z){
         return 1/(1+Math.exp(-z));
         // return Math.atan(z)/Math.PI+1/2;
+    }
+
+    static transform(arr, f){
+        let b = [];
+        
+        for(let i=0; i<arr.length; i++){
+            b.push(f(arr[i]));
+        }
+
+        return arr;
     }
 
 }
