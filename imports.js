@@ -38,6 +38,21 @@ class jsn{
     }
 
     //List Operations
+
+    /**
+     * 
+     * @param {List} A 
+     * @param {float} b 
+     * @returns A with b added to each element
+     */
+    static add(A, b){
+        let a = [];
+        for(let i=0; i<A.length; i++){
+            a.push(A[i]+b);
+        }
+        return a;
+    }
+
     /**
      * Checks if two lists are identical
      * @param {Array} a 
@@ -175,6 +190,21 @@ class jsn{
         }
 
         return arr;
+    }
+
+    /**
+     * 
+     * @param {List} arr 
+     * @returns copy of the list
+     */
+    static copy(arr){
+        let a = [];
+
+        for(let i=0; i<arr.length; i++){
+            a.push(arr[i]);
+        }
+
+        return a;
     }
 
 }
@@ -421,6 +451,10 @@ class Matrix{
             }
         }
         return new Matrix(arr);
+    }
+
+    static rotation(theta){
+        return new Matrix([[Math.cos(theta), -Math.sin(theta)],[Math.sin(theta),Math.cos(theta)]]);
     }
 }
 
