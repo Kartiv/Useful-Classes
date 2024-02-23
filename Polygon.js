@@ -31,7 +31,7 @@ class Polygon{
 
     /**
      * projects polygon over axis
-     * @param {vec2d} axis axis to project over
+     * @param {Vector} axis axis to project over
      * @returns projection along the inputed axis
      */
     project(axis){
